@@ -30,4 +30,4 @@ validFourLetterWords = validFourLetterWords.map(word=>word.toUpperCase());
 
 dictionary.bulkAdd(validFourLetterWords);
 
-fs.writeFileSync('../../../Slam/Dictionary.txt',`export default JSON.parse(${JSON.stringify(dictionary)}`);
+fs.writeFileSync('../../../Slam/Dictionary/wordlist.js',`export default ${JSON.stringify(validFourLetterWords)}`);
