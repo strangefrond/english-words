@@ -1,10 +1,10 @@
 let fs = require('fs');
 
-let { Dictionary } = require('./Dictionary.js');
+let Dictionary = require('./Dictionary.js');
 
 let dictionary = new Dictionary();
 
-let words = fs.readFileSync('./words3.txt',{encoding:'utf8'});
+let words = fs.readFileSync('./scrabbledictionary.txt',{encoding:'utf8'});
 
 let wordArr = words.split('\n');
 
@@ -28,6 +28,6 @@ validFourLetterWords = validFourLetterWords.map(word=>word.toUpperCase());
 
 // console.log(snippet,firstResult,secondResult);
 
-dictionary.bulkAdd(validFourLetterWords);
+dictionary.bulkAddWords(validFourLetterWords);
 
 fs.writeFileSync('../../../Slam/Dictionary/wordlist.js',`export default ${JSON.stringify(validFourLetterWords)}`);
