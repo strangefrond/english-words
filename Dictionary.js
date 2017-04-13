@@ -19,11 +19,12 @@ Tree.prototype.searchChildren = function(letterArr){
   let firstLetter = letterArr.shift();
   if (!this.children[firstLetter]){return false;}
   else {
-    return letterArr.length ? this.children[firstLetter].search(letterArr) : this.endOfWord ;
+    return letterArr.length ? this.children[firstLetter].searchChildren(letterArr) : this.children[firstLetter].endOfWord ;
   }
 }
 
 Tree.prototype.search = function(word){
+  console.log(word);
   if (word.length) return this.searchChildren(word.split(''));
 }
 
